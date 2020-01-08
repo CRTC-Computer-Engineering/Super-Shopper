@@ -3,17 +3,18 @@ with open(r'data/stores.yaml') as file:
     fruits_list = yaml.safe_load(file)
 
     print(fruits_list)
-    print(fruits_list["aisle"][1]["produce"])
+    print(fruits_list["aisle"][1])
 
 #This sets the store location, which has different items in different locations.
 count = False
 store = input("Where are you shopping?: ")
 while count == False:
-    if store == "Hannaford" or store == "hannaford":
+    #if store == "Hannaford" or store == "hannaford":
+    if store.upper() == "hannaford".upper():
         store_items = []
         aisle_location = []
         count = True
-    elif store == "Sam's" or store == "sam's" or store == "Sams" or store == "sams":
+    elif "sam".upper() in store.upper():
         store_items = []
         aisle_location = []
         count = True
