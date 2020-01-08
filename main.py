@@ -25,12 +25,14 @@ while count == False:
 #This sets the items in the shopping list for comparison and sorting.
 list_count = int(input("How many items are on your shopping list?: "))
 shopping_list = []
+shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
-for isle in allisles:      
+for aisle in all aisle:      
     for item in shopping_list:
-        if in shoping list and isle:
-            yayy
+        if in shoping_list and aisle:
+            shopping_list_final.append(item)
         else:
             None
+print (shopping_list_final)
