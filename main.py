@@ -1,3 +1,10 @@
+import yaml
+with open(r'data/stores.yaml') as file:
+    fruits_list = yaml.safe_load(file)
+
+    print(fruits_list)
+    print(fruits_list["aisle"][1]["produce"])
+
 #This sets the store location, which has different items in different locations.
 count = False
 store = input("Where are you shopping?: ")
