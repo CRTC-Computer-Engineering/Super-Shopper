@@ -28,4 +28,3 @@ shopping_list = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
-        

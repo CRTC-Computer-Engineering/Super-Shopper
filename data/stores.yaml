@@ -39,9 +39,6 @@ aisle:
     - "peanut butter"
   4:
     - "cereal"
-    - "diet food"
-    - "fruit snacks"
-    - "granola bars"
     - "granola"
     - "Honey"
     - "oats"
@@ -55,42 +52,27 @@ aisle:
   6:
     - "juices"
     - "seltzer"
-    - "kool aid"
   7:
     - "cookies"
     - "crackers"
     - "soda"
   8:
-    - "baby"
-    - "books"
-    - "magazines"
-    - "baby needs"
-    - "baby food"
   9:
     - "chips"
     - "seasonal"
-    - "rice cakes"
-    - "beef jerky"
   10:
     - "aluminum foil"
     - "freezer wrap"
     - "napkins"
     - "tissues"
-    - "toilet paper"
   11:
-    - "pet needs"
-    - "dog food"
-    - "cat food"
-    - "cat litter"
-    - "pet"
     - "matches"
   12:
     - "house"
     - "mop"
     - "broom"
     - "cleaning"
-    - "chemicals"
   13:
     - "nuts"
   14:
-    - "frozem foods"
+    - "frozen foods"
