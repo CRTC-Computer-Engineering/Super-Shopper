@@ -33,6 +33,7 @@ while count == False:
 #This sets the items in the shopping list for comparison and sorting.
 list_count = int(input("How many items are on your shopping list?: "))
 shopping_list = []
+shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
