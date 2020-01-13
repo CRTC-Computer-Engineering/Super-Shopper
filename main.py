@@ -1,17 +1,31 @@
 import yaml
-import wx
+#import wx
 
-app = wx.App()
+#app = wx.App()
 
-frame = wx.Frame(None, -1, "window Title")
-frame.Show()
-app.MainLoop()
+#frame = wx.Frame(None, -1, "window Title")
+#frame.Show()
+#app.MainLoop()
+
+fruits_list = []
+
+def find_aisle(search_item):
+    for aisle in fruits_list["aisle"]:
+        for item in aisle:
+            print(item)
+            if search_item == item :
+                return aisle
+    return None
+
 
 with open(r'data/stores.yaml') as file:
     fruits_list = yaml.safe_load(file)
 
     print(fruits_list)
-    print(fruits_list["aisle"][1])
+    print(fruits_list["aisle"]["1"])
+    list_of_all_things_in_isle_1 = fruits_list["aisle"]["1"]
+
+print(find_aisle("beans"))
 
 #This sets the store location, which has different items in different locations.
 count = False
@@ -37,3 +51,4 @@ shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
+
