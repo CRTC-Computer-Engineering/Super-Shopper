@@ -1,4 +1,12 @@
 import yaml
+import wx
+
+app = wx.App()
+
+frame = wx.Frame(None, -1, "window Title")
+frame.Show()
+app.MainLoop()
+
 with open(r'data/stores.yaml') as file:
     fruits_list = yaml.safe_load(file)
 
@@ -25,6 +33,7 @@ while count == False:
 #This sets the items in the shopping list for comparison and sorting.
 list_count = int(input("How many items are on your shopping list?: "))
 shopping_list = []
+shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
