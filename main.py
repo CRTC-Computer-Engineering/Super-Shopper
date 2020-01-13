@@ -1,4 +1,12 @@
 import yaml
+import wx
+
+app = wx.App()
+
+frame = wx.Frame(None, -1, "window Title")
+frame.Show()
+app.MainLoop()
+
 with open(r'data/stores.yaml') as file:
     fruits_list = yaml.safe_load(file)
 
@@ -28,4 +36,3 @@ shopping_list = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
-        
