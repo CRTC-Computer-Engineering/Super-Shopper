@@ -9,26 +9,32 @@ import logging
 #app.MainLoop()
 
 fruits_list = []
-logging.basicConfig(level=logging.debug) # Set the logging level
+logging.basicConfig(level=logging.INFO) # Set the logging level    
 
 def find_aisle(search_item):
-    for aisle in fruits_list["aisle"]:
-        for item in aisle:
-            logging.debug(item)
-            if search_item == item :
-                return aisle
+    for aisle, items in fruits_list.items(): #.iteritems() for python 2
+        logging.debug("Currently looking at aisle " + str(aisle))
+        try:
+            for item in items:
+                logging.debug("Currently checking item " + str(item).upper() + ", Looking for " + str(search_item).upper())
+                if str(search_item).upper() == str(item).upper() :
+                    logging.info("Found item " + str(item) + " in aisle " + str(aisle))
+                    return aisle
+        except:
+            logging.warning("Error, no items in row: " + str(aisle))
     return None
 
 
-with open(r'data/stores.yaml') as file:
+with open(r'data/store1.yaml') as file:
     fruits_list = yaml.safe_load(file)
 
     #logging.debug(fruits_list)
     #logging.debug(fruits_list["aisle"]["1"])
-    list_of_all_things_in_isle_1 = fruits_list["aisle"]["1"]
+    list_of_all_things_in_isle_1 = fruits_list["1"]
 
-logging.info(find_aisle("beans"))
-if __name__ == "__main__": # Run only if this is the main file
+logging.info("Searched for item nuts and found item in: " + str(find_aisle("nuts")))
+
+if __name__ == "_main__": # Run only if this is the main file
     #This sets the store location, which has different items in different locations.
     count = False
     store = input("Where are you shopping?: ")
