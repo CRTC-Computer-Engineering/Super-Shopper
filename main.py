@@ -9,20 +9,20 @@ import logging
 #app.MainLoop()
 
 fruits_list = []
-logging.basicConfig(level=logging.INFO) # Set the logging level    
+logging.basicConfig(level=logging.INFO) # Set the logging level (setting it lower will display more messages)
 
 def find_aisle(search_item):
     for aisle, items in fruits_list.items(): #.iteritems() for python 2
-        logging.debug("Currently looking at aisle " + str(aisle))
-        try:
-            for item in items:
-                logging.debug("Currently checking item " + str(item).upper() + ", Looking for " + str(search_item).upper())
-                if str(search_item).upper() == str(item).upper() :
-                    logging.info("Found item " + str(item) + " in aisle " + str(aisle))
-                    return aisle
-        except:
-            logging.warning("Error, no items in row: " + str(aisle))
-    return None
+        logging.debug("Currently looking at aisle " + str(aisle)) # Send a message to the logger
+        try: # Try doing the following
+            for item in items: # For every item in all the items in an aisle 
+                logging.debug("Currently checking item " + str(item).upper() + ", Looking for " + str(search_item).upper()) # log what we're looking for 
+                if str(search_item).upper() == str(item).upper() : # Check if true
+                    logging.info("Found item " + str(item) + " in aisle " + str(aisle)) # Log that we found an item
+                    return aisle # Return the aisle that item exists in
+        except: # If something above failed
+            logging.warning("Error, no items in row: " + str(aisle)) # Trow an error
+    return None # If nothing above worked, return that the item could not be found
 
 
 with open(r'data/store1.yaml') as file:
@@ -32,7 +32,7 @@ with open(r'data/store1.yaml') as file:
     #logging.debug(fruits_list["aisle"]["1"])
     list_of_all_things_in_isle_1 = fruits_list["1"]
 
-logging.info("Searched for item nuts and found item in: " + str(find_aisle("nuts")))
+logging.info("Searched for item nuts and found item in: " + str(find_aisle("nuts"))) # Log this
 
 if __name__ == "_main__": # Run only if this is the main file
     #This sets the store location, which has different items in different locations.
