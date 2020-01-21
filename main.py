@@ -1,3 +1,11 @@
+
+import wx
+app = wx.App()
+frame = wx.Frame(parent=None, title = 'Project')
+frame.Show(True)
+app.MainLoop()
+
+
 #This sets the store location, which has different items in different locations.
 count = False
 store = input("Where are you shopping?: ")
