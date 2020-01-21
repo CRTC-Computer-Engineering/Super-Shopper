@@ -1,32 +1,3 @@
-import yaml
-#import wx
-
-#app = wx.App()
-
-#frame = wx.Frame(None, -1, "window Title")
-#frame.Show()
-#app.MainLoop()
-
-fruits_list = []
-
-def find_aisle(search_item):
-    for aisle in fruits_list["aisle"]:
-        for item in aisle:
-            print(item)
-            if search_item == item :
-                return aisle
-    return None
-
-
-with open(r'data/stores.yaml') as file:
-    fruits_list = yaml.safe_load(file)
-
-    print(fruits_list)
-    print(fruits_list["aisle"]["1"])
-    list_of_all_things_in_isle_1 = fruits_list["aisle"]["1"]
-
-print(find_aisle("beans"))
-
 #This sets the store location, which has different items in different locations.
 count = False
 store = input("Where are you shopping?: ")
@@ -43,7 +14,20 @@ while count == False:
     else:
         print ("Sorry, I don't recognize that store, try again.")
         store = input("Where are you shopping?: ")
-
+aisle1 = ["mexican","international","gourmet","pasta","pizza dough","pizza sauce","rice"]
+aisle2 = ["asain foods","bbq sauce","beans","mayo","mustard","relish","salad dressing","shortening","soups","canned vegetables"]
+aisle3 = ["baking needs","baking","bake ware","cake mixes","cake decor","chocolate chips","coconut","cooking oil","flour","canned fruits","gravy","jams/jellies","pudding","salt","spices","stuffing","sugar","peanut butter"]
+aisle4 = ["cereal","granola","Honey","oats","pancake mix"]
+aisle5 = ["bread","cocoa","coffee","syrup","tea"]
+aisle6 = ["juices","seltzer"]
+aisle7 = ["cookies","crackers","soda"]
+aisle8 = []
+aisle9 = ["chips","seasonal"]
+aisle10 = ["aluminum foil","freezer wrap","napkins","tissues"]
+aisle11 = ["matches"]
+aisle12 = ["house","mop","broom","cleaning"]
+aisle13 = ["nuts"]
+aisle14 = ["frozen foods"]
 #This sets the items in the shopping list for comparison and sorting.
 list_count = int(input("How many items are on your shopping list?: "))
 shopping_list = []
@@ -51,4 +35,3 @@ shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
-
