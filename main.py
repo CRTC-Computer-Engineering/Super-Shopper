@@ -35,3 +35,47 @@ shopping_list_final = []
 for i in range(list_count):
     item = input("Enter item: ")
     shopping_list.append(item)
+
+for item in aisle1:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle1"])
+for item in aisle2:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle2"])
+for item in aisle3:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle3"])
+for item in aisle4:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle4"])
+for item in aisle5:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle5"])
+for item in aisle6:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle6"])
+for item in aisle7:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle7"])
+for item in aisle8:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle8"])
+for item in aisle9:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle9"])
+for item in aisle10:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle10"])
+for item in aisle11:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle11"])
+for item in aisle12:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle12"])
+for item in aisle13:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle13"])
+for item in aisle14:
+    if item in shopping_list:
+        shopping_list_final.append([item,"aisle14"])
+print(shopping_list_final)
