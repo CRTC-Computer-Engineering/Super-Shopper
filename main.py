@@ -1,9 +1,28 @@
-
 import wx
-app = wx.App()
-frame = wx.Frame(parent=None, title = 'Project')
-frame.Show(True)
-app.MainLoop()
+
+class MyFrame(wx.Frame):
+    def __init__(self): # Init here
+        super().__init__(parent=None, title='Speedy Shopper') # title
+        panel = wx.Panel(self) # To put widgets on
+
+        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 85)) # Controool bgox
+        self.text_ctrl.SetValue("")
+        wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 60))
+
+        self.another_text_ctrl = wx.TextCtrl(panel, pos=(200, 100)) # Controool bgox
+        my_btn = wx.Button(panel, label='Press Me', pos=(5, 150)) # button
+
+        my_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_BUTON, witch calls self.calc
+
+        self.Show() # Then show
+
+    def calc(self, event):
+        print(self.text_ctrl.GetValue())
+
+if __name__ == '__main__':
+    app = wx.App()
+    frame = MyFrame()
+    app.MainLoop()
 
 
 #This sets the store location, which has different items in different locations.
