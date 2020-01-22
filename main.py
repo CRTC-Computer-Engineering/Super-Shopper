@@ -8,9 +8,9 @@ class MyFrame(wx.Frame):
         self.text_ctrl = wx.TextCtrl(panel, pos=(5, 85)) # Controool bgox
         self.text_ctrl.SetValue("")
         wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 60))
-
-        self.another_text_ctrl = wx.TextCtrl(panel, pos=(200, 100)) # Controool bgox
-        my_btn = wx.Button(panel, label='Press Me', pos=(5, 150)) # button
+        wx.StaticText(panel, label="How many items are you shopping for", pos=(200, 60))
+        self.another_text_ctrl = wx.TextCtrl(panel, pos=(200, 85)) # Controool bgox
+        my_btn = wx.Button(panel, label='Press Me', pos=(5, 100)) # button
 
         my_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_BUTON, witch calls self.calc
 
