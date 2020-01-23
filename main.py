@@ -24,8 +24,9 @@ class Frame2(wx.Frame):
     def __init__(self):
         super().__init__(parent=None, title='Speedy Shopper')
         self.panel = wx.Panel(self)
-        wx.StaticText(self.panel, label="How many items are you shopping for?", pos=(5, 60))
-        config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 120))
+        wx.StaticText(self.panel, label="How many items are you shopping for?", pos=(5, 20))
+        self.txt_ctrl = wx.TextCtrl(self.panel, pos=(5, 45))
+        config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 70))
 
 if __name__ == '__main__':
     log.basicConfig(level=log.DEBUG)# Sets global logging level to debug
