@@ -1,31 +1,37 @@
 import wx
-
+import logging as log
 class Frame1(wx.Frame):
     def __init__(self): # Init here
         super().__init__(parent=None, title='Speedy Shopper') # title
-        panel = wx.Panel(self) # To put widgets on
-        self.txt_ctrl = wx.TextCtrl(panel, pos=(5, 45)) # Controool bgox
+        self.panel = wx.Panel(self) # To put widgets on
+        self.txt_ctrl = wx.TextCtrl(self.panel, pos=(5, 45)) # Controool bgox
         self.txt_ctrl.SetValue("")
-        wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 20))
-        config_btn = wx.Button(panel, label='Submit ', pos=(5, 70)) # button
+        wx.StaticText(self.panel, label="Are you Shopping at Hannford?", pos=(5, 20))
+        config_btn = wx.Button(self.panel, label='Submit ', pos=(5, 70)) # button
         config_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_ BUTON, witch calls self.calc
         self.Show()
 
     def calc(self, event):
-        print("Checking..")
+        log.info("Checking..")
         if self.txt_ctrl.GetValue().upper() == "yes".upper():
-            print ("working")
+            log.debug ("working")
+            self.Hide()
+            frame1.Show()
+        else:
+            self.Hide()
 
 class Frame2(wx.Frame):
     def __init__(self):
         super().__init__(parent=None, title='Speedy Shopper')
-        panel1 = wx.Panel(self)
-        wx.StaticText(panel, label="How many items are you shopping for?", pos=(5, 60))
-        config_btn1 = wx.Button(panel, label='Submit', pos=(5, 120))
-        self.Show()
+        self.panel = wx.Panel(self)
+        wx.StaticText(self.panel, label="How many items are you shopping for?", pos=(5, 60))
+        config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 120))
+
 if __name__ == '__main__':
+    log.basicConfig(level=log.DEBUG)# Sets global logging level to debug
     app = wx.App()
     frame = Frame1()
+    frame1 = Frame2()
     app.MainLoop()
 
 
