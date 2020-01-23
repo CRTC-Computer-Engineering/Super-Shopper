@@ -4,15 +4,18 @@ class Frame1(wx.Frame):
     def __init__(self): # Init here
         super().__init__(parent=None, title='Speedy Shopper') # title
         panel = wx.Panel(self) # To put widgets on
-        self.potato = wx.TextCtrl(panel, pos=(5, 45)) # Controool bgox
-        self.potato.SetValue("")
+        self.txt_ctrl = wx.TextCtrl(panel, pos=(5, 45)) # Controool bgox
+        self.txt_ctrl.SetValue("")
         wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 20))
         config_btn = wx.Button(panel, label='Submit ', pos=(5, 70)) # button
-
-        config_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_BUTON, witch calls self.calc
+        config_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_ BUTON, witch calls self.calc
         self.Show()
+
     def calc(self, event):
-        print(self.potato.GetValue())
+        print("Checking..")
+        if self.txt_ctrl.GetValue().upper() == "yes".upper():
+            print ("working")
+
 class Frame2(wx.Frame):
     def __init__(self):
         super().__init__(parent=None, title='Speedy Shopper')
@@ -24,13 +27,9 @@ if __name__ == '__main__':
     app = wx.App()
     frame = Frame1()
     app.MainLoop()
-    if self.potato.GetValue() == "yes".upper():
-        store_items = []
-        aisle_location = []
-        count = True
-    else:
-        print ("Sorry, I don't recognize that store, try again.")
-        store = input("Where are you shopping?: ")
+
+
+
 aisle1 = ["mexican","international","gourmet","pasta","pizza dough","pizza sauce","rice"]
 aisle2 = ["asain foods","bbq sauce","beans","mayo","mustard","relish","salad dressing","shortening","soups","canned vegetables"]
 aisle3 = ["baking needs","baking","bake ware","cake mixes","cake decor","chocolate chips","coconut","cooking oil","flour","canned fruits","gravy","jams/jellies","pudding","salt","spices","stuffing","sugar","peanut butter"]
