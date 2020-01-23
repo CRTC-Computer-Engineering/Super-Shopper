@@ -1,38 +1,30 @@
 import wx
 
-class MyFrame(wx.Frame):
+class Frame1(wx.Frame):
     def __init__(self): # Init here
         super().__init__(parent=None, title='Speedy Shopper') # title
         panel = wx.Panel(self) # To put widgets on
+        self.potato = wx.TextCtrl(panel, pos=(5, 45)) # Controool bgox
+        self.potato.SetValue("")
+        wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 20))
+        config_btn = wx.Button(panel, label='Submit ', pos=(5, 70)) # button
 
-        self.text_ctrl = wx.TextCtrl(panel, pos=(5, 85)) # Controool bgox
-        self.text_ctrl.SetValue("")
-        wx.StaticText(panel, label="Are you Shopping at Hannford?", pos=(5, 60))
-        wx.StaticText(panel, label="How many items are you shopping for?", pos=(200, 60))
-        self.another_text_ctrl = wx.TextCtrl(panel, pos=(200, 85)) # Controool bgox
-        my_btn = wx.Button(panel, label='Press Me', pos=(5, 120)) # button
-
-        my_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_BUTON, witch calls self.calc
-
+        config_btn.Bind( wx.EVT_BUTTON, self.calc) # Binds the button, to the event EVT_BUTON, witch calls self.calc
+        self.Show()
     def calc(self, event):
-        print(self.text_ctrl.GetValue())
-
+        print(self.potato.GetValue())
+class Frame2(wx.Frame):
+    def __init__(self):
+        super().__init__(parent=None, title='Speedy Shopper')
+        panel1 = wx.Panel(self)
+        wx.StaticText(panel, label="How many items are you shopping for?", pos=(5, 60))
+        config_btn1 = wx.Button(panel, label='Submit', pos=(5, 120))
+        self.Show()
 if __name__ == '__main__':
     app = wx.App()
-    frame = MyFrame()
+    frame = Frame1()
     app.MainLoop()
-
-
-#This sets the store location, which has different items in different locations.
-count = False
-store = input("Where are you shopping?: ")
-while count == False:
-    #if store == "Hannaford" or store == "hannaford":
-    if store.upper() == "hannaford".upper():
-        store_items = []
-        aisle_location = []
-        count = True
-    elif "sam".upper() in store.upper():
+    if self.potato.GetValue() == "yes".upper():
         store_items = []
         aisle_location = []
         count = True
