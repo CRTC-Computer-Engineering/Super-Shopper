@@ -1,5 +1,8 @@
 import wx
 import logging as log
+
+list_count = 0
+
 class Frame1(wx.Frame):
     def __init__(self): # Init here
         super().__init__(parent=None, title='Speedy Shopper') # title
@@ -27,12 +30,29 @@ class Frame2(wx.Frame):
         wx.StaticText(self.panel, label="How many items are you shopping for?", pos=(5, 20))
         self.txt_ctrl = wx.TextCtrl(self.panel, pos=(5, 45))
         config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 70))
+        config_btn1.Bind( wx.EVT_BUTTON, self.calc)
+    def calc(self, event):
+        list_count = self.txt_ctrl.GetValue()
+        print (list_count)
+        self.Hide()
+        frame2.Show()
+class Frame3(wx.Frame):
+    def __init__(self):
+        super().__init__(parent=None, title='Speedy Shopper')
+        self.panel = wx.Panel(self)
+        wx.StaticText(self.panel, label="How many items are you shopping for?", pos=(5, 20))
+        self.txt_ctrl = wx.TextCtrl(self.panel, pos=(5, 45))
+        config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 70))
+        #config_btn1.Bind( wx.EVT_BUTTON, self.calc)
+    #    frame1.list_count
+
 
 if __name__ == '__main__':
     log.basicConfig(level=log.DEBUG)# Sets global logging level to debug
     app = wx.App()
     frame = Frame1()
     frame1 = Frame2()
+    frame2 = Frame3()
     app.MainLoop()
 
 
