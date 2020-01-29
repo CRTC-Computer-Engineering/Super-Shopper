@@ -38,16 +38,21 @@ class Frame2(wx.Frame):
         frame2.Show()
 class Frame3(wx.Frame):
     def __init__(self):
-        delete_me = [("Jeff"), ("Pancakes"),("Four")]
+        delete_me = ["Jeff", ("Pancakes"),("Four")]
         super().__init__(parent=None, title='Speedy Shopper')
         self.panel = wx.Panel(self)
+        self.panel.SetBackgroundColour(wx.Colour (255, 255, 255))
         id = wx.NewIdRef()
-        self.gui_list = wx.ListCtrl(self, id,
-                                    style=wx.LC_REPORT|
-                                    wx.SUNKEN_BORDER)
-        self.gui_list.InsertColumn(0, "Ur mom")
-        for item in delete_me:
-            self.gui_list.SetItem(1, item) #THese args wrong
+        wx.StaticText(self.panel, label="Enter item: ", pos=(5, 20))
+        self.txt_ctrl = wx.TextCtrl(self.panel, pos=(5, 45))
+        config_btn1 = wx.Button(self.panel, label='Submit', pos=(5, 70))
+        config_btn1.Bind( wx.EVT_BUTTON, self.calc)
+        self.listbox = wx.ListBox(choices=[], id=3, name='Shopping List', parent=self, pos=wx.Point(200,0), size=wx.Size(50,80))
+        self.listbox.SetBackgroundColour(wx.Colour (255, 255, 255))
+        def calc(self, event):
+            for item in delete_me:
+                self.listbox.Append(item)
+
         #config_btn1.Bind( wx.EVT_BUTTON, self.calc)
     #    frame1.list_count
 
