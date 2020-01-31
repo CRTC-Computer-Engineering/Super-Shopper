@@ -1,4 +1,5 @@
 
+
 store = input("Are you Shopping at Hannaford?")
 if store.upper() == "yes".upper():
     list_count = int(input("How many items are on your shopping list?: "))
